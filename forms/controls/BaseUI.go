@@ -347,8 +347,12 @@ func (_this *BaseUI) SetBgColor(color int32) {
 	_this.impl.SetBgColor(color)
 }
 
-func (_this *BaseUI) Invoke(fn func(state interface{}), state interface{}) {
-	_this.impl.Invoke(fn, state)
+func (_this *BaseUI) Invoke(fn func()) {
+	_this.impl.Invoke(fn)
+}
+
+func (_this *BaseUI) InvokeEx(fn func(state interface{}), state interface{}) {
+	_this.impl.InvokeEx(fn, state)
 }
 
 func (_this *BaseUI) IsInvoke() bool {

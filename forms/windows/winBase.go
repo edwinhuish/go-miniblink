@@ -368,7 +368,7 @@ func (_this *winBase) msgProc(hWnd win.HWND, msg uint32, wParam, lParam uintptr)
 						case win.WM_MBUTTONDOWN:
 							e.Button |= fm.MouseButtons_Middle
 						}
-						_this.Invoke(func(state interface{}) {
+						_this.InvokeEx(func(state interface{}) {
 							st := state.(fm.MouseEvArgs)
 							_this.onMouseClick(&st)
 						}, e)
@@ -419,8 +419,13 @@ func (_this *winBase) CreateGraphics() fm.Graphics {
 	}
 	return g
 }
+func (_this *winBase) Invoke(fn func()) {
+	_this.InvokeEx(func(state interface{}) {
+		state.(func())()
+	}, fn)
+}
 
-func (_this *winBase) Invoke(fn func(state interface{}), state interface{}) {
+func (_this *winBase) InvokeEx(fn func(state interface{}), state interface{}) {
 	ctx := invokeContext{
 		fn:    fn,
 		state: state,

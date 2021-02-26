@@ -9,7 +9,8 @@ type GUI interface {
 	SetLocation(x, y int)
 	SetBgColor(color int32)
 	IsInvoke() bool
-	Invoke(fn func(state interface{}), state interface{})
+	Invoke(fn func())
+	InvokeEx(fn func(state interface{}), state interface{})
 	Enable(b bool)
 	IsEnable() bool
 	GetParent() GUI

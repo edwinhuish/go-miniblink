@@ -45,7 +45,8 @@ type Window interface {
 	SetOnShow(proc WindowShowProc) WindowShowProc
 
 	GetProvider() Provider
-	Invoke(fn func(state interface{}), state interface{})
+	Invoke(fn func())
+	InvokeEx(fn func(state interface{}), state interface{})
 	IsInvoke() bool
 	SetSize(w int, h int)
 	SetLocation(x int, y int)

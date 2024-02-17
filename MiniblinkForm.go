@@ -2,6 +2,7 @@ package GoMiniblink
 
 import (
 	"fmt"
+
 	fm "github.com/edwinhuish/go-miniblink/forms"
 	br "github.com/edwinhuish/go-miniblink/forms/bridge"
 	cs "github.com/edwinhuish/go-miniblink/forms/controls"
@@ -70,7 +71,8 @@ func (_this *MiniblinkForm) setDrop() {
 				X: e.ScreenX,
 				Y: e.ScreenY,
 			}
-			_this.View.SetCursor(fm.CursorType_SIZEALL)
+			// 应由网页端自行决定鼠标形状
+			// _this.View.SetCursor(fm.CursorType_SIZEALL)
 			_this.View.MouseEnable(false)
 		}
 	}

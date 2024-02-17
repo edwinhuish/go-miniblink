@@ -2,6 +2,7 @@ package GoMiniblink
 
 import (
 	"fmt"
+
 	fm "github.com/edwinhuish/go-miniblink/forms"
 	br "github.com/edwinhuish/go-miniblink/forms/bridge"
 	cs "github.com/edwinhuish/go-miniblink/forms/controls"
@@ -208,4 +209,19 @@ func (_this *MiniblinkForm) setFormFn(frame FrameContext) {
 	`
 	js = fmt.Sprintf(js, _fnMax, _fnMin, _fnClose, _fnDrop)
 	frame.RunJs(js)
+}
+
+func (_this *MiniblinkForm) onShowDevtools(wke wkeHandle, _ uintptr) uintptr {
+	// mbApi.wkeOnPaintBitUpdated(_this.wke, mbApi.onPaintBitUpdated, 0)
+	// mbApi.wkeOnLoadUrlBegin(_this.wke, _this.onUrlBegin, 0)
+	// mbApi.wkeOnLoadUrlEnd(_this.wke, _this.onUrlEnd, 0)
+	// mbApi.wkeOnLoadUrlFail(_this.wke, _this.onUrlFail, 0)
+	// mbApi.wkeOnDidCreateScriptContext(_this.wke, _this.onDidCreateScriptContext, 0)
+	// mbApi.wkeOnConsole(_this.wke, _this.jsConsole, 0)
+	// mbApi.wkeOnDocumentReady(_this.wke, _this.onDocumentReady, 0)
+	return 0
+}
+
+func (_this *MiniblinkForm) ShowDevTools() {
+	mbApi.wkeShowDevtools(_this.wke, "http://__devtools__/inspector.html", _this.onShowDevtools, 0)
 }

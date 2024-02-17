@@ -1,11 +1,14 @@
 package GoMiniblink
 
 import (
-	cs "github.com/edwinhuish/go-miniblink/forms/controls"
 	"image"
 	url2 "net/url"
 	"reflect"
 	"strings"
+
+	cs "github.com/edwinhuish/go-miniblink/forms/controls"
+	"github.com/edwinhuish/go-miniblink/internal/devtools"
+	assetfs "github.com/elazarl/go-bindata-assetfs"
 )
 
 type MiniblinkBrowser struct {
@@ -43,6 +46,13 @@ func (_this *MiniblinkBrowser) Init() *MiniblinkBrowser {
 	_this.OnConsole = _this.defOnConsole
 	_this.OnDocumentReady = _this.defOnDocumentReady
 	_this.OnPaintUpdated = _this.defOnPaintUpdated
+
+	// 添加DevTools工具到ResourceLoader
+	_this.ResourceLoader = append(_this.ResourceLoader, NewFileLoaderBin(&assetfs.AssetFS{
+		Asset:     devtools.Asset,
+		AssetDir:  devtools.AssetDir,
+		AssetInfo: devtools.AssetInfo,
+	}, "__devtools__"))
 
 	_this.EvRequestBefore["__goMiniblink"] = _this.loadRes
 	_this.EvDestroy["__goMiniblink"] = _this.onClosed

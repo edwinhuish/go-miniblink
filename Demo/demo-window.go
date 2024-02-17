@@ -26,6 +26,9 @@ func main() {
 	frm.View.ResourceLoader = append(frm.View.ResourceLoader, gm.NewFileLoaderStatic("Res", "local"))
 	frm.EvLoad["show"] = func(s cs.GUI) {
 		frm.View.LoadUri("http://local/window.html")
+		frm.View.GetMiniblinkHandle()
+		frm.ShowDevTools()
 	}
+
 	cs.Run(&frm.Form)
 }

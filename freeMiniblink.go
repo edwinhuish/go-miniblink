@@ -2,15 +2,16 @@ package GoMiniblink
 
 import (
 	"fmt"
-	fm "github.com/edwinhuish/go-miniblink/forms"
-	cs "github.com/edwinhuish/go-miniblink/forms/controls"
-	win "github.com/edwinhuish/go-miniblink/forms/windows/win32"
 	"image"
 	"math"
 	"strconv"
 	"strings"
 	"time"
 	"unsafe"
+
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	cs "github.com/edwinhuish/go-miniblink/forms/controls"
+	win "github.com/edwinhuish/go-miniblink/forms/windows/win32"
 )
 
 var fnCall = "fn" + strconv.FormatInt(time.Now().UnixNano(), 32)

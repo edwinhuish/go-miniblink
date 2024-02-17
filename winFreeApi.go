@@ -1,10 +1,11 @@
 package GoMiniblink
 
 import (
-	"golang.org/x/sys/windows"
 	"strconv"
 	"syscall"
 	"unsafe"
+
+	"golang.org/x/sys/windows"
 )
 
 type wkeProxy struct {
@@ -111,6 +112,9 @@ type winFreeApi struct {
 	_wkeSetTransparent           *windows.LazyProc
 	_wkeSetViewProxy             *windows.LazyProc
 	_wkeGetViewDC                *windows.LazyProc
+	_wkeShowDevtools             *windows.LazyProc
+	_wkeSetLocalStorageFullPath  *windows.LazyProc
+	_wkeSetCookieJarFullPath     *windows.LazyProc
 }
 
 func (_this *winFreeApi) init() *winFreeApi {
@@ -196,6 +200,9 @@ func (_this *winFreeApi) init() *winFreeApi {
 	_this._wkeDestroyWebView = lib.NewProc("wkeDestroyWebView")
 	_this._jsGetWebView = lib.NewProc("jsGetWebView")
 	_this._wkeGetViewDC = lib.NewProc("wkeGetViewDC")
+	_this._wkeShowDevtools = lib.NewProc("wkeShowDevtools")
+	_this._wkeSetCookieJarFullPath = lib.NewProc("wkeSetCookieJarFullPath")
+	_this._wkeSetLocalStorageFullPath = lib.NewProc("wkeSetLocalStorageFullPath")
 
 	_this._wkeInitialize.Call()
 	return _this
@@ -748,4 +755,19 @@ func (_this *winFreeApi) wkeSetHandle(wke wkeHandle, handle uintptr) {
 func (_this *winFreeApi) wkeCreateWebView() wkeHandle {
 	r, _, _ := _this._wkeCreateWebView.Call()
 	return wkeHandle(r)
+}
+
+func (_this *winFreeApi) wkeShowDevtools(wke wkeHandle, path string, callback wkeOnShowDevtoolsCallback, param uintptr) {
+	ptr := toCallStr(path)
+	_this._wkeShowDevtools.Call(uintptr(wke), uintptr(unsafe.Pointer(&ptr[0])), syscall.NewCallbackCDecl(callback), param)
+}
+
+func (_this *winFreeApi) wkeSetLocalStorageFullPath(wke wkeHandle, path string) {
+	ptr := toCallStr(path)
+	_this._wkeSetLocalStorageFullPath.Call(uintptr(wke), uintptr(unsafe.Pointer(&ptr[0])))
+}
+
+func (_this *winFreeApi) wkeSetCookieJarFullPath(wke wkeHandle, path string) {
+	ptr := toCallStr(path)
+	_this._wkeSetCookieJarFullPath.Call(uintptr(wke), uintptr(unsafe.Pointer(&ptr[0])))
 }

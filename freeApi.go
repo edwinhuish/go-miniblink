@@ -92,6 +92,7 @@ type wkeConsoleCallback func(wke wkeHandle, param uintptr, level int32, msg, nam
 type wkeLoadUrlEndCallback func(wke wkeHandle, param, url uintptr, job wkeNetJob, buf uintptr, len int32) uintptr
 type wkeLoadUrlFailCallback func(wke wkeHandle, param, url uintptr, job wkeNetJob) uintptr
 type wkeDocumentReady2Callback func(wke wkeHandle, param uintptr, frame wkeFrame) uintptr
+type wkeOnShowDevtoolsCallback func(wke wkeHandle, param uintptr) uintptr
 
 var mbApi freeApi
 
@@ -169,4 +170,7 @@ type freeApi interface {
 	wkeSetTransparent(wke wkeHandle, enable bool)
 	wkeSetViewProxy(wke wkeHandle, proxy ProxyInfo)
 	wkeGetViewDC(wke wkeHandle) uintptr
+	wkeShowDevtools(wke wkeHandle, path string, callback wkeOnShowDevtoolsCallback, param uintptr)
+	wkeSetCookieJarFullPath(wke wkeHandle, path string)
+	wkeSetLocalStorageFullPath(wke wkeHandle, path string)
 }

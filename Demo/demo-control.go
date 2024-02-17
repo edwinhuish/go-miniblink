@@ -1,6 +1,8 @@
 package main
 
 import (
+	"runtime"
+
 	gm "github.com/edwinhuish/go-miniblink"
 	fm "github.com/edwinhuish/go-miniblink/forms"
 	cs "github.com/edwinhuish/go-miniblink/forms/controls"
@@ -8,6 +10,9 @@ import (
 )
 
 func main() {
+	runtime.LockOSThread()
+	defer runtime.UnlockOSThread()
+
 	cs.App = new(gw.Provider).Init()
 	cs.App.SetIcon("app.ico")
 

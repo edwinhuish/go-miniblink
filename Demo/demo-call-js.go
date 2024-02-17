@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	gm "github.com/edwinhuish/go-miniblink"
 	fm "github.com/edwinhuish/go-miniblink/forms"
 	cs "github.com/edwinhuish/go-miniblink/forms/controls"
@@ -20,7 +21,7 @@ func main() {
 
 	mb := new(gm.MiniblinkBrowser).Init()
 	mb.SetAnchor(fm.AnchorStyle_Fill)
-	mb.ResourceLoader = append(mb.ResourceLoader, new(gm.FileLoader).Init("Res", "local"))
+	mb.ResourceLoader = append(mb.ResourceLoader, gm.NewFileLoaderStatic("Res", "local"))
 	mb.EvConsole["打印js控制台内容"] = func(_ *gm.MiniblinkBrowser, e gm.ConsoleEvArgs) {
 		fmt.Println("js console:", e.Message())
 	}

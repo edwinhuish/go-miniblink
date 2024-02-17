@@ -1,6 +1,8 @@
 package main
 
 import (
+	// "runtime"
+
 	gm "github.com/edwinhuish/go-miniblink"
 	fm "github.com/edwinhuish/go-miniblink/forms"
 	cs "github.com/edwinhuish/go-miniblink/forms/controls"
@@ -8,6 +10,9 @@ import (
 )
 
 func main() {
+	// runtime.LockOSThread()
+	// defer runtime.UnlockOSThread()
+
 	cs.App = new(gw.Provider).Init()
 	cs.App.SetIcon("app.ico")
 
@@ -18,7 +23,7 @@ func main() {
 	frm.SetSize(800, 500)
 	frm.SetBorderStyle(fm.FormBorder_None)
 	frm.NoneBorderResize()
-	frm.View.ResourceLoader = append(frm.View.ResourceLoader, new(gm.FileLoader).Init("Res", "local"))
+	frm.View.ResourceLoader = append(frm.View.ResourceLoader, gm.NewFileLoaderStatic("Res", "local"))
 	frm.EvLoad["show"] = func(s cs.GUI) {
 		frm.View.LoadUri("http://local/window.html")
 	}

@@ -1,13 +1,14 @@
 package main
 
 import (
+	url2 "net/url"
+	"strings"
+
 	gm "github.com/edwinhuish/go-miniblink"
 	"github.com/edwinhuish/go-miniblink/Demo/Res"
 	fm "github.com/edwinhuish/go-miniblink/forms"
 	cs "github.com/edwinhuish/go-miniblink/forms/controls"
 	gw "github.com/edwinhuish/go-miniblink/forms/windows"
-	url2 "net/url"
-	"strings"
 )
 
 func main() {

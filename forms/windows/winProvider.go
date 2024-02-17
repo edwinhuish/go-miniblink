@@ -1,15 +1,17 @@
 package windows
 
 import (
+	"os"
+	"path/filepath"
+	"reflect"
+	"runtime"
+	"syscall"
+	"unsafe"
+
 	fm "github.com/edwinhuish/go-miniblink/forms"
 	br "github.com/edwinhuish/go-miniblink/forms/bridge"
 	win "github.com/edwinhuish/go-miniblink/forms/windows/win32"
 	"golang.org/x/sys/windows"
-	"os"
-	"path/filepath"
-	"reflect"
-	"syscall"
-	"unsafe"
 )
 
 type windowsMsgProc func(hWnd win.HWND, msg uint32, wParam, lParam uintptr) uintptr
@@ -162,6 +164,9 @@ func (_this *Provider) Exit(code int) {
 }
 
 func (_this *Provider) RunMain(form br.Form) {
+	runtime.LockOSThread()
+	defer runtime.UnlockOSThread()
+
 	form.Show()
 	var message win.MSG
 	for {

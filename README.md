@@ -1,4 +1,6 @@
-# GoMiniblink
+# go-miniblink
+
+## Fork from https://gitee.com/aochulai/GoMiniblink
 
 #### 介绍
 Miniblink的免费版封装，官网：https://miniblink.net/

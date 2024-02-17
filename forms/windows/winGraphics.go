@@ -1,8 +1,8 @@
 package windows
 
 import (
-	fm "gitee.com/aochulai/GoMiniblink/forms"
-	win "gitee.com/aochulai/GoMiniblink/forms/windows/win32"
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	win "github.com/edwinhuish/go-miniblink/forms/windows/win32"
 	"image"
 	"unsafe"
 )

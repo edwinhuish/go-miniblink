@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	gm "gitee.com/aochulai/GoMiniblink"
-	fm "gitee.com/aochulai/GoMiniblink/forms"
-	cs "gitee.com/aochulai/GoMiniblink/forms/controls"
-	"gitee.com/aochulai/GoMiniblink/forms/controls/MsgBox"
-	gw "gitee.com/aochulai/GoMiniblink/forms/windows"
+	gm "github.com/edwinhuish/go-miniblink"
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	cs "github.com/edwinhuish/go-miniblink/forms/controls"
+	"github.com/edwinhuish/go-miniblink/forms/controls/MsgBox"
+	gw "github.com/edwinhuish/go-miniblink/forms/windows"
 )
 
 func main() {

@@ -1,9 +1,9 @@
 package windows
 
 import (
-	fm "gitee.com/aochulai/GoMiniblink/forms"
-	br "gitee.com/aochulai/GoMiniblink/forms/bridge"
-	win "gitee.com/aochulai/GoMiniblink/forms/windows/win32"
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	br "github.com/edwinhuish/go-miniblink/forms/bridge"
+	win "github.com/edwinhuish/go-miniblink/forms/windows/win32"
 	"golang.org/x/sys/windows"
 	"os"
 	"path/filepath"

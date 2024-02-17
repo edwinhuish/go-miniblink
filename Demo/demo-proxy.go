@@ -1,9 +1,9 @@
 package main
 
 import (
-	gm "gitee.com/aochulai/GoMiniblink"
-	cs "gitee.com/aochulai/GoMiniblink/forms/controls"
-	gw "gitee.com/aochulai/GoMiniblink/forms/windows"
+	gm "github.com/edwinhuish/go-miniblink"
+	cs "github.com/edwinhuish/go-miniblink/forms/controls"
+	gw "github.com/edwinhuish/go-miniblink/forms/windows"
 )
 
 func main() {

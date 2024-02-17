@@ -1,7 +1,7 @@
 package bridge
 
 import (
-	fm "gitee.com/aochulai/GoMiniblink/forms"
+	fm "github.com/edwinhuish/go-miniblink/forms"
 )
 
 type WindowLostFocusProc func() bool

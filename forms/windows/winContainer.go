@@ -1,8 +1,8 @@
 package windows
 
 import (
-	br "gitee.com/aochulai/GoMiniblink/forms/bridge"
-	win "gitee.com/aochulai/GoMiniblink/forms/windows/win32"
+	br "github.com/edwinhuish/go-miniblink/forms/bridge"
+	win "github.com/edwinhuish/go-miniblink/forms/windows/win32"
 )
 
 type winContainer struct {

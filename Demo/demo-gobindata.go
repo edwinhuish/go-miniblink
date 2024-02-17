@@ -1,11 +1,11 @@
 package main
 
 import (
-	gm "gitee.com/aochulai/GoMiniblink"
-	"gitee.com/aochulai/GoMiniblink/Demo/Res"
-	fm "gitee.com/aochulai/GoMiniblink/forms"
-	cs "gitee.com/aochulai/GoMiniblink/forms/controls"
-	gw "gitee.com/aochulai/GoMiniblink/forms/windows"
+	gm "github.com/edwinhuish/go-miniblink"
+	"github.com/edwinhuish/go-miniblink/Demo/Res"
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	cs "github.com/edwinhuish/go-miniblink/forms/controls"
+	gw "github.com/edwinhuish/go-miniblink/forms/windows"
 	url2 "net/url"
 	"strings"
 )

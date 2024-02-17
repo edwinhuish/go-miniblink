@@ -1,8 +1,8 @@
 package MsgBox
 
 import (
-	fm "gitee.com/aochulai/GoMiniblink/forms"
-	cs "gitee.com/aochulai/GoMiniblink/forms/controls"
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	cs "github.com/edwinhuish/go-miniblink/forms/controls"
 )
 
 func Show(param fm.MsgBoxParam) fm.MsgBoxResult {

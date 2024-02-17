@@ -1,7 +1,7 @@
 package GoMiniblink
 
 import (
-	"gitee.com/aochulai/GoMiniblink/forms"
+	"github.com/edwinhuish/go-miniblink/forms"
 	"image"
 	"strconv"
 )

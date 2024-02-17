@@ -1,8 +1,8 @@
 package controls
 
 import (
-	fm "gitee.com/aochulai/GoMiniblink/forms"
-	br "gitee.com/aochulai/GoMiniblink/forms/bridge"
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	br "github.com/edwinhuish/go-miniblink/forms/bridge"
 )
 
 type Container interface {

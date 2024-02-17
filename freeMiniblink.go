@@ -2,9 +2,9 @@ package GoMiniblink
 
 import (
 	"fmt"
-	fm "gitee.com/aochulai/GoMiniblink/forms"
-	cs "gitee.com/aochulai/GoMiniblink/forms/controls"
-	win "gitee.com/aochulai/GoMiniblink/forms/windows/win32"
+	fm "github.com/edwinhuish/go-miniblink/forms"
+	cs "github.com/edwinhuish/go-miniblink/forms/controls"
+	win "github.com/edwinhuish/go-miniblink/forms/windows/win32"
 	"image"
 	"math"
 	"strconv"

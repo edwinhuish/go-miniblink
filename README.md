@@ -18,9 +18,9 @@ Go封装的功能比较少，其实就是 https://gitee.com/aochulai/NetMiniblin
     package main
     
     import (
-    	gm "gitee.com/aochulai/GoMiniblink"
-    	cs "gitee.com/aochulai/GoMiniblink/forms/controls"
-    	ws "gitee.com/aochulai/GoMiniblink/forms/windows"
+    	gm "github.com/edwinhuish/go-miniblink"
+    	cs "github.com/edwinhuish/go-miniblink/forms/controls"
+    	ws "github.com/edwinhuish/go-miniblink/forms/windows"
     )
     
     func main() {
